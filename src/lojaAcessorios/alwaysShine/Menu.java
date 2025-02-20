@@ -20,11 +20,7 @@ public class Menu {
 		int id = 0;
 			
 		Scanner recebeDados = new Scanner (System.in);
-				
-		//Bolsa novaBolsa = new Bolsa("Colcci","Preto","Bolsa",200,2,"Couro",4);
-		
-		//novaBolsa.visualizar();
-		
+					
 		ProdutoController p1 = new ProdutoController();
 
 		do {
