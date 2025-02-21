@@ -1,5 +1,7 @@
 package model;
 
+import util.Cores;
+
 public class Maquiagem extends Produto{
 	
 	private String tipoProduto;
@@ -22,7 +24,9 @@ public class Maquiagem extends Produto{
 	@Override
 	public void visualizar() {
 		super.visualizar();
-		System.out.println("Tipo de produto: " + this.tipoProduto);
+		System.out.println(Cores.TEXT_CYAN_BOLD+"Tipo de produto: " +Cores.TEXT_RESET + this.tipoProduto);
+		System.out.println("▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒");
+
 	}
 
 

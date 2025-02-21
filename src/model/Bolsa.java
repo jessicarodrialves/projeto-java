@@ -1,5 +1,7 @@
 package model;
 
+import util.Cores;
+
 public class Bolsa extends Produto {
 	
 	public Bolsa(String nome, String cor, String categoria, double preco, int quantidade,  String material,
@@ -32,8 +34,10 @@ public class Bolsa extends Produto {
 	@Override
 	public void visualizar() {
 		super.visualizar();
-		System.out.println("Material: " + this.material);
-		System.out.println("Quantidade de Compartimento: " + this.quantidadeCompartimento);
+		System.out.println(Cores.TEXT_CYAN_BOLD+"Material: "+Cores.TEXT_RESET  + this.material);
+		System.out.println(Cores.TEXT_CYAN_BOLD+"Quantidade de Compartimento: " +Cores.TEXT_RESET + this.quantidadeCompartimento);
+		System.out.println("▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒");
+
 	}
 
 	

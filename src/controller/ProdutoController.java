@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import model.Produto;
 import repository.ProdutoRepository;
+import util.Cores;
 
 public class ProdutoController implements ProdutoRepository{
 	
@@ -32,7 +33,7 @@ public class ProdutoController implements ProdutoRepository{
 			listaProduto.set(listaProduto.indexOf(atualizarProduto), produto);
 			System.out.println("\nA O produto número: " + produto.getId() + " foi atualizado com sucesso!");
 		}else {
-			System.out.println("\n O produto número: " + produto.getId() + " não foi encontrada!");
+			System.out.println( Cores.TEXT_RED_BOLD + "\n O produto número: " + produto.getId() + " não foi encontrada!" + Cores.TEXT_RESET);
 		}
 		
 	}
@@ -45,7 +46,7 @@ public class ProdutoController implements ProdutoRepository{
 			if (listaProduto.remove(produto) == true) 
 				System.out.println("\nO produto de número: " + produto.getId() + " foi deletado com sucesso!");
 			}else {
-				System.out.println("\nO produto de número: " + id + " não foi encontrado!");
+				System.out.println(Cores.TEXT_RED_BOLD +"\nO produto de número: " + id + " não foi encontrado!" + Cores.TEXT_RESET);
 			}
 	}
 	

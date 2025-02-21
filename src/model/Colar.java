@@ -1,5 +1,7 @@
 package model;
 
+import util.Cores;
+
 public class Colar extends Produto{
 	
 	private String tipoColar;
@@ -19,7 +21,9 @@ public class Colar extends Produto{
 	@Override
 	public void visualizar() {
 		super.visualizar();
-		System.out.println("Tipo de colar: " + this.tipoColar);
+		System.out.println(Cores.TEXT_CYAN_BOLD + "Tipo de colar: "+Cores.TEXT_RESET + this.tipoColar);
+		System.out.println("▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒");
+
 	}
 
 

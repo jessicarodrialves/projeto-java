@@ -1,5 +1,7 @@
 package model;
 
+import util.Cores;
+
 public abstract class Produto {
 	
 	private String nome;
@@ -74,12 +76,16 @@ public abstract class Produto {
 		}
 
 		public void visualizar(){
-			System.out.println("Nome: " + this.nome);
-			System.out.println("Cor: " + this.cor);
-			System.out.println("Categoria: " + this.categoria);
-			System.out.println("Preço: " + this.preco);
-			System.out.println("Quantidade: " + this.quantidade);
-			System.out.println("ID: " + this.id);
+			
+			System.out.println("\n▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\n");
+
+			System.out.println(Cores.TEXT_CYAN_BOLD+"                  Produto            \n"+ Cores.TEXT_RESET);
+			System.out.println(Cores.TEXT_CYAN_BOLD+"Nome: "+ Cores.TEXT_RESET + this.nome);
+			System.out.println(Cores.TEXT_CYAN_BOLD+"Cor: "+ Cores.TEXT_RESET  + this.cor);
+			System.out.println(Cores.TEXT_CYAN_BOLD+"Categoria: "+ Cores.TEXT_RESET  + this.categoria);
+			System.out.println(Cores.TEXT_CYAN_BOLD+"Preço: "+ Cores.TEXT_RESET  + this.preco);
+			System.out.println(Cores.TEXT_CYAN_BOLD+"Quantidade: "+ Cores.TEXT_RESET  + this.quantidade);
+			System.out.println(Cores.TEXT_CYAN_BOLD+"ID: "+ Cores.TEXT_RESET  + this.id);
 
 		}
 	}
