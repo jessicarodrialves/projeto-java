@@ -30,9 +30,9 @@ public class ProdutoController implements ProdutoRepository{
 		
 		if(atualizarProduto != null) {
 			listaProduto.set(listaProduto.indexOf(atualizarProduto), produto);
-			System.out.println("\nA O número do produto: " + produto.getId() + " foi atualizado com sucesso!");
+			System.out.println("\nA O produto número: " + produto.getId() + " foi atualizado com sucesso!");
 		}else {
-			System.out.println("\n O número do Produto: " + produto.getId() + " não foi encontrada!");
+			System.out.println("\n O produto número: " + produto.getId() + " não foi encontrada!");
 		}
 		
 	}
@@ -44,8 +44,9 @@ public class ProdutoController implements ProdutoRepository{
 		if(produto != null) {
 			if (listaProduto.remove(produto) == true) 
 				System.out.println("\nO produto de número: " + produto.getId() + " foi deletado com sucesso!");
-			}
+			}else {
 				System.out.println("\nO produto de número: " + id + " não foi encontrado!");
+			}
 	}
 	
 	public int gerarId() {

@@ -1,4 +1,5 @@
 package lojaAcessorios.alwaysShine;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import controller.ProdutoController;
 import model.Bolsa;
@@ -24,6 +25,8 @@ public class Menu {
 		ProdutoController p1 = new ProdutoController();
 
 		do {
+			try {
+				
 		System.out.println("========================================================");
 		System.out.println("               Digite uma opção:                        ");
 		System.out.println("========================================================");
@@ -34,11 +37,13 @@ public class Menu {
 		System.out.println("              5 - Sair                                  ");
 		System.out.println("========================================================");
 	
+		
 		opcao = recebeDados.nextInt();
 		
+		recebeDados.nextLine();	
+		
 		switch (opcao) {
-			case 1:
-				recebeDados.nextLine();	
+			case 1:				
 				System.out.println("Informe a marca do produto: ");
 				nome = recebeDados.nextLine();
 				
@@ -48,10 +53,9 @@ public class Menu {
 				System.out.println("Informe o valor (R$): ");
 				valorProduto = recebeDados.nextDouble();
 				
+				
 				System.out.println("Informe a quantidade: ");
 				quantidade = recebeDados.nextInt();
-				
-				
 												
 				System.out.println("Informe a categoria: ");
 				System.out.println(" 1 - Bolsa ");
@@ -71,7 +75,7 @@ public class Menu {
 					recebeDados.nextLine();
 					System.out.println("Informe o material da bolsa: ");
 					material = recebeDados.nextLine();
-					p1.cadastrarProduto(new Bolsa(nome, cor, "Bolsa", quantidadeCompartimento, quantidade, material, quantidadeCompartimento, p1.gerarId()));
+					p1.cadastrarProduto(new Bolsa(nome, cor, "Bolsa", valorProduto, quantidade, material, quantidadeCompartimento, p1.gerarId()));
 				
 				}else if(categoria == 2) {
 					recebeDados.nextLine();
@@ -93,7 +97,7 @@ public class Menu {
 				break;
 			case 3:
 				System.out.println("Informe o número do produto:");
-				recebeDados.skip("\\R?");
+				
 				id = recebeDados.nextInt();
 								
 				var buscarProduto = p1.buscarProduto(id);
@@ -142,9 +146,11 @@ public class Menu {
 						System.out.println("Informe o tipo de maquiagem: ");
 						tipoMaquiagem = recebeDados.nextLine();
 						p1.atualizarProduto(new Maquiagem(nome, cor, "Maquiagem", valorProduto, quantidade, tipoMaquiagem, id));
+					}else {
+						System.out.println("Número do Produto não encontrado!");
 					}
 				}
-				System.out.println("Número do Produto não encontrado!");
+				
 				
 				break;
 			case 4:
@@ -162,7 +168,14 @@ public class Menu {
 				System.out.println("Opção Inválida!! Favor informar um número de 1 a 6 ");
 				break;
 			}
-		}while(opcao != 5);
+		
+			} catch (InputMismatchException e) {
+				System.out.println("Tipo de dado inválido, favor inserir número");
+				recebeDados.nextLine();	
+			}
+		}while(opcao != 5 );
+			
+		
 		recebeDados.close();
 	}
 	
